@@ -14,3 +14,16 @@
     </v-flex>
   </v-layout>
 </template>
+<script>
+export default {
+  computed: {
+    auth() {
+      return this.$store.state.authCode
+    }
+  },
+  created() {
+    console.log(this.auth)
+    console.log(this.$route)
+  }
+}
+</script>
