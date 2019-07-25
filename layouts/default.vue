@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+    {{ bottomNav }}
     <v-content id="content">
       <v-container>
         <nuxt />
@@ -9,26 +10,41 @@
       v-model="bottomNav"
       fixed
       grow
+      app
     >
       <v-btn
-        value="recent"
+        value="home"
       >
-        <span>Recent</span>
-        <v-icon>history</v-icon>
+        <span>home</span>
+        <v-icon>home</v-icon>
       </v-btn>
 
       <v-btn
-        value="favorites"
+        value="programs"
       >
-        <span>Favorites</span>
-        <v-icon>favorite</v-icon>
+        <span>programs</span>
+        <v-icon>calendar_today</v-icon>
       </v-btn>
 
       <v-btn
-        value="nearby"
+        value="watching"
       >
-        <span>Nearby</span>
-        <v-icon>place</v-icon>
+        <span>watching</span>
+        <v-icon>play_arrow</v-icon>
+      </v-btn>
+
+      <v-btn
+        value="search"
+      >
+        <span>search</span>
+        <v-icon>search</v-icon>
+      </v-btn>
+
+      <v-btn
+        value="menu"
+      >
+        <span>menu</span>
+        <v-icon>menu</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </v-app>
@@ -38,7 +54,7 @@
 export default {
   data() {
     return {
-      bottomNav: 'recent'
+      bottomNav: '/'
     }
   },
   mounted() {
@@ -48,6 +64,11 @@ export default {
       e.preventDefault()
     }, { passive: false })
     window.scrollTo(0, 0)
+  },
+  watch: {
+    bottomNav(path) {
+      this.$nuxt.$emit('routerIndex', path)
+    }
   }
 }
 </script>
