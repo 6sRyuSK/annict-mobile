@@ -68,6 +68,7 @@ export default {
       pink6: colors.pink.lighten2
     }
   },
+  serverMiddleware: ["~/api/"],
   /*
   ** Build configuration
   */
