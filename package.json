@@ -17,6 +17,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/vuetify": "^1.0.0",
+    "graphql-request": "^1.8.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
