@@ -8,13 +8,15 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "test": "jest",
-    "dev": "cross-env HOST=0.0.0.0 PORT=3000 nuxt",
+    "dev": "nuxt",
+    "devm": "cross-env HOST=0.0.0.0 PORT=3000 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.3.0",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/vuetify": "^1.0.0",
     "graphql-request": "^1.8.2",
